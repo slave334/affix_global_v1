@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
 export const HeaderWrapper = styled.header`
+  border-bottom: 1px solid #1b1b1c;
+  backdrop-filter: blur(50px);
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.32) 0%,
     rgba(0, 0, 0, 0.32) 100%
   );
   color: white;
-  padding: 20px 0;
+  padding: 15px 15px 15px;
 
   .container {
     display: flex;

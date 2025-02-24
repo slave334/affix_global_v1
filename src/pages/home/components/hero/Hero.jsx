@@ -1,0 +1,53 @@
+import { ContainerPading } from '../../../../styles/GlobalStyles'
+import {
+  HeroWrapper,
+  HeroWrapperTop,
+  HeroWrapperBottom,
+  HeroTitle,
+  HeroSubtitle,
+  HeroButton,
+  HeroBotomElLine,
+  HeroBotomElTitle,
+  HeroBotomElText,
+  HeroBotomEl,
+  HeroVideoBackground,
+} from './HeroStyled'
+import heroVideo from '../../../../assets/videos/1_1.mp4'
+const Hero = () => {
+  return (
+    <HeroWrapper>
+      <HeroVideoBackground autoPlay loop muted playsInline>
+        <source src={heroVideo} type="video/mp4" />
+      </HeroVideoBackground>
+      <ContainerPading>
+        <HeroWrapperTop>
+          <HeroTitle>
+            GlobalAffiX — платформа, объединяющая профессионалов трафика и
+            рекламодателей
+          </HeroTitle>
+          <HeroSubtitle>
+            Мы создаём пространство, где каждый участник получает максимум
+            возможностей для роста и стабильного дохода.
+          </HeroSubtitle>
+          <HeroButton>Подать заявку сейчас</HeroButton>
+        </HeroWrapperTop>
+        <HeroWrapperBottom>
+          <HeroBotomElLine>
+            <HeroBotomElTitle>1 200+</HeroBotomElTitle>
+            <HeroBotomElText>Партнеры</HeroBotomElText>
+          </HeroBotomElLine>
+          <HeroBotomElLine>
+            <HeroBotomElTitle>1 200+</HeroBotomElTitle>
+            <HeroBotomElText>Партнеры</HeroBotomElText>
+          </HeroBotomElLine>
+          <HeroBotomEl>
+            <HeroBotomElTitle>1 200+</HeroBotomElTitle>
+            <HeroBotomElText>Партнеры</HeroBotomElText>
+          </HeroBotomEl>
+        </HeroWrapperBottom>
+      </ContainerPading>
+    </HeroWrapper>
+  )
+}
+
+export default Hero
