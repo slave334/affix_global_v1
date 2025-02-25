@@ -13,6 +13,7 @@ export const CoreValuesWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  overflow: hidden;
 `
 
 export const CoreValuesItem = styled.div`
