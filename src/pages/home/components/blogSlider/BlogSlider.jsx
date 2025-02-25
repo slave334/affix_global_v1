@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import styled from 'styled-components'
 
-// 📌 Styled Components
 const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -15,7 +14,7 @@ const SliderWrapper = styled.div`
 const BlogCardWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 5px; /* 🔥 Зменшено відстань між картками */
+  padding: 0 5px;
 `
 
 const BlogCard = styled.div`
@@ -98,8 +97,8 @@ const BlogSlider = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    centerMode: true, // 🔥 Активуємо режим центрування
-    centerPadding: '40px', // 🔥 Тепер видно сусідні картки
+    centerMode: true,
+    centerPadding: '40px',
     beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
   }
 
@@ -125,16 +124,13 @@ const BlogSlider = () => {
         ))}
       </Slider>
 
-      {/* 📌 Пагінація у 2 форматах */}
       <PaginationWrapper>
-        {/* 1️⃣ Прогрес-бар як на фото */}
         <ProgressBar>
           {blogPosts.map((_, index) => (
             <ProgressItem key={index} active={index === currentSlide} />
           ))}
         </ProgressBar>
 
-        {/* 2️⃣ Цифрова пагінація */}
         <PageCounter>
           {currentSlide + 1} / {blogPosts.length}
         </PageCounter>

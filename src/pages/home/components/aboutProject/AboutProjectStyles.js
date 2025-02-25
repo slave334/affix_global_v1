@@ -38,7 +38,6 @@ export const AboutProjectText = styled.span`
 export const AboutProjectButton = styled.button`
   color: #1b1b1c;
   text-align: center;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -47,9 +46,26 @@ export const AboutProjectButton = styled.button`
   border-radius: 100px;
   background: #fff;
   display: flex;
-
   padding: 15px 30px;
   justify-content: center;
   align-items: center;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(135deg, #0044cc, #007bff);
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px 2px rgba(0, 123, 255, 0.7);
+  }
 `

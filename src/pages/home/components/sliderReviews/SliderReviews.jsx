@@ -80,7 +80,7 @@ const reviews = [
   {
     name: 'Алексей Бугров',
     position: 'IT-директор в компании ITL Team',
-    video: 'https://www.w3schools.com/html/mov_bbb.mp4', // Замінити на справжнє відео
+    video: 'https://www.w3schools.com/html/mov_bbb.mp4',
   },
   {
     name: 'Іван Петров',

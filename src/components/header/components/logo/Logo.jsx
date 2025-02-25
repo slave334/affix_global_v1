@@ -1,13 +1,16 @@
+import { Link } from 'react-router-dom'
 import LogoTop from '../../../../assets/icons/logoTop.svg'
 import LogoBottom from '../../../../assets/icons/logoBottom.svg'
 import { LogoWrapp } from './LogoStyled'
 
 const Logo = () => {
   return (
-    <LogoWrapp>
-      <img src={LogoTop} />
-      <img src={LogoBottom} />
-    </LogoWrapp>
+    <Link to="/affix_global/">
+      <LogoWrapp>
+        <img src={LogoTop} alt="GlobalAffiX Logo" />
+        <img src={LogoBottom} alt="GlobalAffiX Logo" />
+      </LogoWrapp>
+    </Link>
   )
 }
 

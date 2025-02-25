@@ -1,10 +1,12 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
+import Loading from './components/loading/Loading'
 
 const Home = lazy(() => import('./pages/home/Home'))
-const About = lazy(() => import('./pages/About'))
-const Contact = lazy(() => import('./pages/Contact'))
+const Advantages = lazy(() => import('./pages/Advantages'))
+const Contact = lazy(() => import('./pages/contact/Contact'))
+const Blog = lazy(() => import('./pages/Blog'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
@@ -14,24 +16,32 @@ function App() {
         <Route
           index
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <Home />
             </Suspense>
           }
         />
         <Route
-          path="/affix_global/about/"
+          path="/affix_global/advantages"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <About />
+            <Suspense fallback={<Loading />}>
+              <Advantages />
             </Suspense>
           }
         />
         <Route
           path="/affix_global/contact"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <Contact />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/affix_global/blog"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Blog />
             </Suspense>
           }
         />
@@ -39,7 +49,7 @@ function App() {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <NotFound />
             </Suspense>
           }

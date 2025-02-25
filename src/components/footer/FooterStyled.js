@@ -57,6 +57,7 @@ export const FooterContacts = styled.div`
 `
 
 export const FooterContactButtonTelegram = styled.button`
+  cursor: pointer;
   border: 1px solid #039be5;
   color: #039be5;
   background: transparent;
@@ -72,8 +73,26 @@ export const FooterContactButtonTelegram = styled.button`
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0.07px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #039be5;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(3, 155, 229, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px 2px rgba(3, 155, 229, 0.8);
+  }
 `
+
 export const FooterContactButtonWhatsapp = styled.button`
+  cursor: pointer;
   border: 1px solid #29a71a;
   color: #29a71a;
   background: transparent;
@@ -89,6 +108,22 @@ export const FooterContactButtonWhatsapp = styled.button`
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0.07px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #29a71a;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(41, 167, 26, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px 2px rgba(41, 167, 26, 0.8);
+  }
 `
 
 export const FooterContactIcon = styled.img``
