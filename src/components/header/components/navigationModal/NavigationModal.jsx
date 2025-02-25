@@ -7,6 +7,12 @@ import {
   NavLinks,
   NavLinkItem,
 } from './NavigationModal.styles'
+import { NavBtnWrapp } from './NavigationModal.styles'
+import { NavBtnWhatsapp } from './NavigationModal.styles'
+import { NavBtnTelegram } from './NavigationModal.styles'
+
+import SVGTELEGRAM from '../../../../assets/icons/svgTelegram.svg'
+import SVGWhatsapp from '../../../../assets/icons/svgWhatsapp.svg'
 
 const modalVariants = {
   open: { x: 0 },
@@ -62,16 +68,35 @@ const NavigationModal = ({ isOpen, toggleModal }) => {
           >
             <ModalContent>
               <NavLinks>
-                <NavLinkItem to="/" onClick={toggleModal}>
-                  Home
+                <NavLinkItem to="/affix_global/" onClick={toggleModal}>
+                  Про нас
                 </NavLinkItem>
-                <NavLinkItem to="/about" onClick={toggleModal}>
-                  About
+                <NavLinkItem
+                  to="/affix_global/advantages"
+                  onClick={toggleModal}
+                >
+                  Преимущества
+                </NavLinkItem>
+                <NavLinkItem to="/affix_global/contact" onClick={toggleModal}>
+                  Контакты
+                </NavLinkItem>
+                <NavLinkItem to="/affix_global/blog" onClick={toggleModal}>
+                  Блог
                 </NavLinkItem>
                 <NavLinkItem to="/contact" onClick={toggleModal}>
-                  Contact
+                  FAQ
                 </NavLinkItem>
               </NavLinks>
+              <NavBtnWrapp>
+                <NavBtnTelegram>
+                  <span>Перейти в наш Telegram Bot</span>
+                  <img src={SVGTELEGRAM} />
+                </NavBtnTelegram>
+                <NavBtnWhatsapp>
+                  <span>Написать нам в Whatsapp</span>
+                  <img src={SVGWhatsapp} />
+                </NavBtnWhatsapp>
+              </NavBtnWrapp>
             </ModalContent>
           </motion.div>
         </>

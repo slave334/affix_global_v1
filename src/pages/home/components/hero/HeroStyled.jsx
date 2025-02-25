@@ -68,7 +68,6 @@ export const HeroSubtitle = styled.span`
 export const HeroButton = styled.button`
   color: #fff;
   text-align: center;
-
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -78,6 +77,24 @@ export const HeroButton = styled.button`
   background: #2b75dc;
   padding: 14px 29px;
   border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #fff;
+    color: #2b75dc;
+    box-shadow: 0px 4px 15px rgba(64, 152, 255, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus {
+    background: #fff;
+    color: #2b75dc;
+    box-shadow: 0px 4px 15px rgba(64, 152, 255, 0.5);
+  }
 `
 
 export const HeroBotomElLine = styled.div`

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
 
-// 📌 Styled контейнер для секції
 const SectionWrapper = styled.div`
   width: 100%;
   opacity: 0;
