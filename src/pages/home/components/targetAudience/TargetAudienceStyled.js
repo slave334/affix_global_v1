@@ -25,6 +25,11 @@ export const AudienceTitle = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media (min-width: 1280px) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+  }
 `
 export const AudienceList = styled.ul`
   display: flex;
@@ -32,6 +37,10 @@ export const AudienceList = styled.ul`
   gap: 40px;
   justify-content: center;
   align-items: center;
+  @media (min-width: 1280px) {
+    flex-direction: row;
+    gap: 60px;
+  }
 `
 export const AudienceItem = styled.li`
   display: flex;
@@ -49,6 +58,9 @@ export const AudienceNumber = styled.span`
   font-weight: 700;
   line-height: normal;
   margin-bottom: 30px;
+  @media (min-width: 1280px) {
+    font-size: 66px;
+  }
 `
 export const AudienceContent = styled.div`
   display: flex;

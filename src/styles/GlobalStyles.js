@@ -87,4 +87,7 @@ export const ContainerPading = styled.div`
   padding-right: 25px;
   padding-left: 25px;
   max-width: 420px;
+  @media (min-width: 1280px) {
+    max-width: 1200px;
+  }
 `

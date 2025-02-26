@@ -6,6 +6,10 @@ export const CoreValuesContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 1280px) {
+    flex-direction: row;
+  }
 `
 
 export const CoreValuesWrapper = styled.div`
@@ -14,6 +18,9 @@ export const CoreValuesWrapper = styled.div`
   gap: 10px;
   width: 100%;
   overflow: hidden;
+  @media (min-width: 1280px) {
+    flex-direction: row;
+  }
 `
 
 export const CoreValuesItem = styled.div`
@@ -40,6 +47,9 @@ export const CoreValuesTitle = styled.h2`
   font-size: 20px;
   font-weight: 700;
   text-align: left;
+  @media (min-width: 1280px) {
+    font-size: 22px;
+  }
 `
 
 export const CoreValuesText = styled.span`
@@ -47,4 +57,7 @@ export const CoreValuesText = styled.span`
   font-size: 16px;
   font-weight: 400;
   text-align: left;
+  @media (min-width: 1280px) {
+    font-size: 18px;
+  }
 `

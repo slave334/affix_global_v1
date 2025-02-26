@@ -6,6 +6,11 @@ export const AboutProjectWrapper = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
+  @media (min-width: 1280px) {
+    flex-direction: row-reverse;
+    gap: 60px;
+    /* padding: 60px; */
+  }
 `
 
 export const AboutProjectImageWrapper = styled.div``
@@ -15,6 +20,10 @@ export const AboutProjectContent = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  @media (min-width: 1280px) {
+    gap: 40px;
+    padding: 60px;
+  }
 `
 
 export const AboutProjectTitle = styled.h2`
@@ -24,6 +33,12 @@ export const AboutProjectTitle = styled.h2`
   font-weight: 800;
   line-height: 130%;
   letter-spacing: 0.12px;
+  @media (min-width: 1280px) {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+  }
 `
 
 export const AboutProjectText = styled.span`
@@ -31,8 +46,12 @@ export const AboutProjectText = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 20.8px */
+  line-height: 130%;
   letter-spacing: 0.08px;
+  @media (min-width: 1280px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `
 
 export const AboutProjectButton = styled.button`
