@@ -73,4 +73,21 @@ export const PartnerProgramButton = styled.button`
   align-items: center;
   align-self: stretch;
   max-width: 250px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  &:hover {
+    background: linear-gradient(135deg, #0044cc, #007bff);
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px 2px rgba(0, 123, 255, 0.7);
+  }
 `

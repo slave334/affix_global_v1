@@ -99,7 +99,7 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 87%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.866);
   border: none;
   width: 50px;
   height: 50px;
@@ -112,7 +112,7 @@ const ArrowButton = styled.button`
   align-items: center;
   justify-content: center;
   &:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255, 255, 255);
   }
 
   &.prev {
@@ -126,6 +126,9 @@ const ArrowButton = styled.button`
     display: none;
   }
 `
+import NextSVG from '../../../../assets/icons/next.svg'
+import PrevSVG from '../../../../assets/icons/prev.svg'
+
 import Video1 from '../../../../assets/videos/reviews/1_video.mp4'
 import Video2 from '../../../../assets/videos/reviews/2_video.mp4'
 import Video3 from '../../../../assets/videos/reviews/3_video.mp4'
@@ -248,10 +251,10 @@ const SliderReviews = () => {
     <SliderWrapper>
       <h2>Что о нас говорят наши партнеры?</h2>
       <ArrowButton className="prev" onClick={() => sliderRef.slickPrev()}>
-        ‹
+        <img src={PrevSVG} alt="" />
       </ArrowButton>
       <ArrowButton className="next" onClick={() => sliderRef.slickNext()}>
-        ›
+        <img src={NextSVG} alt="" />
       </ArrowButton>
       <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
         {reviews.map((review, index) => (
