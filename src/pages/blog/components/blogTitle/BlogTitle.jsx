@@ -10,7 +10,7 @@ import {
 const BlogTitle = () => {
   return (
     <BlogTitleWrapper>
-      <ContainerPading>
+      <>
         <BlogTitleContainer>
           <BlogTitleHeading>Блог Global Affix</BlogTitleHeading>
           <BlogTitleText>
@@ -20,7 +20,7 @@ const BlogTitle = () => {
             увеличить свой доход.
           </BlogTitleText>
         </BlogTitleContainer>
-      </ContainerPading>
+      </>
     </BlogTitleWrapper>
   )
 }

@@ -14,6 +14,11 @@ export const BlogTitleWrapp = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+  @media (min-width: 1280px) {
+  }
 `
 export const BlogCard = styled.div`
   background: #111;
@@ -35,6 +40,13 @@ export const BlogCard = styled.div`
     height: auto;
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
   `}
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 800px;
+  }
 `
 
 export const BlogImage = styled.img`
@@ -50,6 +62,12 @@ export const BlogTitle = styled.h2`
   font-weight: 700;
   line-height: normal;
   margin: 0;
+  @media (min-width: 768px) {
+    font-size: 35px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 40px;
+  }
 `
 
 export const BlogText = styled.div`
