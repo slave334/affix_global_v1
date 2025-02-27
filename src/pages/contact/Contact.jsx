@@ -22,8 +22,10 @@ import {
   FooterInputWrapper,
   FooterSubmitButton,
 } from '../../components/footer/footerDextop/FooterDextopStyled'
+import useNavigateToContact from '../../hooks/useNavigateToContact'
 
 const Contact = () => {
+  const redirectToContact = useNavigateToContact()
   const isDesktop = useMediaQuery({ minWidth: 1280 })
 
   return (
@@ -50,7 +52,9 @@ const Contact = () => {
             {isDesktop && (
               <FooterInputWrapper>
                 <FooterInput placeholder="Введите свой ник в Telegram" />
-                <FooterSubmitButton>Подать заявку сейчас</FooterSubmitButton>
+                <FooterSubmitButton onClick={redirectToContact}>
+                  Подать заявку сейчас
+                </FooterSubmitButton>
               </FooterInputWrapper>
             )}
           </ContactNavigate>

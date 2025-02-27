@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom' // ✅ Імпортуємо useLocation
+import { useLocation } from 'react-router-dom'
 import Logo from '../../header/components/logo/Logo'
 import {
   FooterContactButtonTelegram,
@@ -16,7 +16,6 @@ import {
   FooterDextopTop,
   FooterDextopBottom,
   FooterNavList,
-  FooterNavItem,
   FooterInputWrapper,
   FooterInput,
   FooterSubmitButton,
@@ -26,8 +25,10 @@ import {
 
 import SVGTELEGRAM from '../../../assets/icons/svgTelegram.svg'
 import SVGWhatsapp from '../../../assets/icons/svgWhatsapp.svg'
+import useNavigateToContact from '../../../hooks/useNavigateToContact'
 
 const FooterDextop = () => {
+  const redirectToContact = useNavigateToContact()
   const location = useLocation()
   console.log('====================================')
   console.log(location.pathname)
@@ -64,7 +65,9 @@ const FooterDextop = () => {
         {!isContactPage && (
           <FooterInputWrapper>
             <FooterInput placeholder="Введите свой ник в Telegram" />
-            <FooterSubmitButton>Подать заявку сейчас</FooterSubmitButton>
+            <FooterSubmitButton onClick={redirectToContact}>
+              Подать заявку сейчас
+            </FooterSubmitButton>
           </FooterInputWrapper>
         )}
 

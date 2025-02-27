@@ -13,7 +13,9 @@ import {
   HeroVideoBackground,
 } from './HeroStyled'
 import heroVideo from '../../../../assets/videos/1_1.mp4'
+import useNavigateToContact from '../../../../hooks/useNavigateToContact'
 const Hero = () => {
+  const redirectToContact = useNavigateToContact()
   return (
     <HeroWrapper>
       <HeroVideoBackground autoPlay loop muted playsInline>
@@ -29,7 +31,9 @@ const Hero = () => {
             Мы создаём пространство, где каждый участник получает максимум
             возможностей для роста и стабильного дохода.
           </HeroSubtitle>
-          <HeroButton>Подать заявку сейчас</HeroButton>
+          <HeroButton onClick={redirectToContact}>
+            Подать заявку сейчас
+          </HeroButton>
         </HeroWrapperTop>
         <HeroWrapperBottom>
           <HeroBotomElLine>
