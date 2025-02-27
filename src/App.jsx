@@ -22,7 +22,7 @@ function App() {
           }
         />
         <Route
-          path="/advantages"
+          path="/affix_global/advantages"
           element={
             <Suspense fallback={<Loading />}>
               <Advantages />
@@ -30,7 +30,7 @@ function App() {
           }
         />
         <Route
-          path="/contact"
+          path="/affix_global/contact"
           element={
             <Suspense fallback={<Loading />}>
               <Contact />
@@ -38,7 +38,7 @@ function App() {
           }
         />
         <Route
-          path="/blog"
+          path="/affix_global/blog"
           element={
             <Suspense fallback={<Loading />}>
               <Blog />
