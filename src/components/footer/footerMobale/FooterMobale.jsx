@@ -16,8 +16,15 @@ import {
   FooterContactButtonTelegram,
   FooterContactButtonWhatsapp,
 } from '../FooterStyled'
+import { useLocation } from 'react-router-dom'
 
 const FooterMobale = () => {
+  const location = useLocation()
+  console.log('====================================')
+  console.log(location.pathname)
+  console.log('====================================')
+  const isContactPage = location.pathname === '/affix_global/contact'
+
   return (
     <FooterContainer>
       <FooterLogo>
@@ -34,16 +41,19 @@ const FooterMobale = () => {
           <FooterNavButton>FAQ</FooterNavButton>
         </FooterNavColumn>
       </FooterNav>
-      <FooterContacts>
-        <FooterContactButtonTelegram>
-          <span>Перейти в наш Telegram Bot</span>
-          <FooterContactIcon src={SVGTELEGRAM} alt="Telegram" />
-        </FooterContactButtonTelegram>
-        <FooterContactButtonWhatsapp>
-          <span>Написать нам в Whatsapp</span>
-          <FooterContactIcon src={SVGWhatsapp} alt="Whatsapp" />
-        </FooterContactButtonWhatsapp>
-      </FooterContacts>
+
+      {!isContactPage && (
+        <FooterContacts>
+          <FooterContactButtonTelegram>
+            <span>Перейти в наш Telegram Bot</span>
+            <FooterContactIcon src={SVGTELEGRAM} alt="Telegram" />
+          </FooterContactButtonTelegram>
+          <FooterContactButtonWhatsapp>
+            <span>Написать нам в Whatsapp</span>
+            <FooterContactIcon src={SVGWhatsapp} alt="Whatsapp" />
+          </FooterContactButtonWhatsapp>
+        </FooterContacts>
+      )}
 
       <FooterLegalList>
         <FooterLegalItem>
