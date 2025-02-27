@@ -12,7 +12,7 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 function App() {
   return (
     <Routes>
-      <Route path="/affix_global/" element={<MainLayout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route
           index
           element={
@@ -22,7 +22,7 @@ function App() {
           }
         />
         <Route
-          path="/affix_global/advantages"
+          path="/advantages"
           element={
             <Suspense fallback={<Loading />}>
               <Advantages />
@@ -30,7 +30,7 @@ function App() {
           }
         />
         <Route
-          path="/affix_global/contact"
+          path="/contact"
           element={
             <Suspense fallback={<Loading />}>
               <Contact />
@@ -38,7 +38,7 @@ function App() {
           }
         />
         <Route
-          path="/affix_global/blog"
+          path="/blog"
           element={
             <Suspense fallback={<Loading />}>
               <Blog />
