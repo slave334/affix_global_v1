@@ -6,7 +6,7 @@ import Loading from './components/loading/Loading'
 const Home = lazy(() => import('./pages/home/Home'))
 const Advantages = lazy(() => import('./pages/Advantages'))
 const Contact = lazy(() => import('./pages/contact/Contact'))
-const Blog = lazy(() => import('./pages/Blog'))
+const Blog = lazy(() => import('./pages/blog/Blog'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
