@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom' // ✅ Імпортуємо useLocation
 import Logo from '../../header/components/logo/Logo'
 import {
   FooterContactButtonTelegram,
@@ -27,6 +28,12 @@ import SVGTELEGRAM from '../../../assets/icons/svgTelegram.svg'
 import SVGWhatsapp from '../../../assets/icons/svgWhatsapp.svg'
 
 const FooterDextop = () => {
+  const location = useLocation()
+  console.log('====================================')
+  console.log(location.pathname)
+  console.log('====================================')
+  const isContactPage = location.pathname === '/affix_global/contact'
+
   return (
     <FooterDextopContainer>
       <FooterDextopTop>
@@ -54,21 +61,25 @@ const FooterDextop = () => {
           <FooterNavButton>FAQ</FooterNavButton>
         </FooterNavList>
 
-        <FooterInputWrapper>
-          <FooterInput placeholder="Введите свой ник в Telegram" />
-          <FooterSubmitButton>Подать заявку сейчас</FooterSubmitButton>
-        </FooterInputWrapper>
+        {!isContactPage && (
+          <FooterInputWrapper>
+            <FooterInput placeholder="Введите свой ник в Telegram" />
+            <FooterSubmitButton>Подать заявку сейчас</FooterSubmitButton>
+          </FooterInputWrapper>
+        )}
 
-        <FooterContactWrapper>
-          <FooterContactButtonTelegram>
-            <span>Перейти в наш Telegram Bot</span>
-            <FooterContactIcon src={SVGTELEGRAM} alt="Telegram" />
-          </FooterContactButtonTelegram>
-          <FooterContactButtonWhatsapp>
-            <span>Написать нам в Whatsapp</span>
-            <FooterContactIcon src={SVGWhatsapp} alt="Whatsapp" />
-          </FooterContactButtonWhatsapp>
-        </FooterContactWrapper>
+        {!isContactPage && (
+          <FooterContactWrapper>
+            <FooterContactButtonTelegram>
+              <span>Перейти в наш Telegram Bot</span>
+              <FooterContactIcon src={SVGTELEGRAM} alt="Telegram" />
+            </FooterContactButtonTelegram>
+            <FooterContactButtonWhatsapp>
+              <span>Написать нам в Whatsapp</span>
+              <FooterContactIcon src={SVGWhatsapp} alt="Whatsapp" />
+            </FooterContactButtonWhatsapp>
+          </FooterContactWrapper>
+        )}
       </FooterDextopBottom>
     </FooterDextopContainer>
   )
