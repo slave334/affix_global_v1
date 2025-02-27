@@ -1,14 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import styled from 'styled-components'
+
+import Img1 from '../../../../assets/images/BlogSlider1.png'
+import Img2 from '../../../../assets/images/BlogSlider2.png'
+import Img3 from '../../../../assets/images/BlogSlider3.png'
+import Img4 from '../../../../assets/images/BlogSlider4.png'
 
 const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
   text-align: center;
   color: white;
+  @media (min-width: 1280px) {
+    padding-bottom: 50px;
+  }
+`
+
+const SliderTitle = styled.h1`
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 20px;
 `
 
 const BlogCardWrapper = styled.div`
@@ -18,21 +32,25 @@ const BlogCardWrapper = styled.div`
 `
 
 const BlogCard = styled.div`
-  width: 280px !important;
+  width: 240px !important;
   height: 320px;
   background: #111;
-  padding: 20px;
   border-radius: 15px;
   text-align: center;
   margin: auto;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 `
 
-const VideoWrapper = styled.div`
+const ImgWrapper = styled.div`
   width: 100%;
-  height: 160px;
   background: #222;
   border-radius: 10px;
+  overflow: hidden;
+`
+
+const ImgEl = styled.img`
+  width: 240px;
+  height: 240px;
   overflow: hidden;
 `
 
@@ -46,7 +64,7 @@ const PaginationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 40px;
 `
 
 const ProgressBar = styled.div`
@@ -70,54 +88,119 @@ const PageCounter = styled.div`
   color: #fff;
 `
 
+const ArrowButton = styled.button`
+  position: absolute;
+  top: 87%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  &.prev {
+    left: 25%;
+  }
+  &.next {
+    right: 25%;
+  }
+
+  @media (max-width: 1279px) {
+    display: none;
+  }
+`
+
 const blogPosts = [
-  {
-    title: 'Тренды Front-end, которые будут с нами в 2025 году',
-    video: 'https://www.w3schools.com/html/mov_bbb.mp4', // Тестове відео
-  },
-  {
-    title: 'Как криптовалюта изменит финансовый рынок',
-    video: 'https://www.w3schools.com/html/movie.mp4', // Тестове відео
-  },
-  {
-    title: 'Лучшие способы инвестирования в 2025',
-    video: 'https://www.w3schools.com/html/mov_bbb.mp4', // Тестове відео
-  },
-  {
-    title: 'Блокчейн технологии: что нужно знать?',
-    video: 'https://www.w3schools.com/html/movie.mp4', // Тестове відео
-  },
+  { title: 'Тренды Front-end, которые будут с нами в 2025 году', img: Img1 },
+  { title: 'Как криптовалюта изменит финансовый рынок', img: Img2 },
+  { title: 'Лучшие способы инвестирования в 2025', img: Img3 },
+  { title: 'Блокчейн технологии: что нужно знать?', img: Img4 },
+  { title: 'Тренды Front-end, которые будут с нами в 2025 году', img: Img1 },
+  { title: 'Как криптовалюта изменит финансовый рынок', img: Img2 },
+  { title: 'Лучшие способы инвестирования в 2025', img: Img3 },
+  { title: 'Блокчейн технологии: что нужно знать?', img: Img4 },
 ]
 
 const BlogSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const sliderRef = useRef(null)
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
+    slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '40px',
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+    centerPadding: '0px',
+    arrows: false,
+    beforeChange: (_, newIndex) => setCurrentSlide(newIndex),
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: { slidesToShow: 3, centerMode: true, centerPadding: '0px' },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2.5,
+          centerMode: true,
+          centerPadding: '30px',
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 2, centerMode: true, centerPadding: '40px' },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1.5,
+          centerMode: true,
+          centerPadding: '20px',
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 1, centerMode: true, centerPadding: '60px' },
+      },
+    ],
   }
 
   return (
     <SliderWrapper>
-      <h2>Блог</h2>
-      <Slider {...settings}>
+      <SliderTitle>Блог</SliderTitle>
+
+      <ArrowButton
+        className="prev"
+        onClick={() => sliderRef.current.slickPrev()}
+      >
+        ‹
+      </ArrowButton>
+      <ArrowButton
+        className="next"
+        onClick={() => sliderRef.current.slickNext()}
+      >
+        ›
+      </ArrowButton>
+
+      <Slider ref={sliderRef} {...settings}>
         {blogPosts.map((post, index) => (
           <BlogCardWrapper key={index}>
             <BlogCard>
-              <VideoWrapper>
-                <video
-                  src={post.video}
-                  controls
-                  width="100%"
-                  height="100%"
-                  style={{ objectFit: 'cover' }}
-                />
-              </VideoWrapper>
+              <ImgWrapper>
+                <ImgEl src={post.img} />
+              </ImgWrapper>
               <BlogTitle>{post.title}</BlogTitle>
             </BlogCard>
           </BlogCardWrapper>

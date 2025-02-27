@@ -21,14 +21,25 @@ export const AboutUniqueTitle = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media (min-width: 1280px) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+  }
 `
 
 export const AboutUniqueList = styled.ul`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
   justify-content: center;
-  align-items: center;
+
+  width: 100%;
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
 `
 
 export const AboutUniqueItem = styled.li`
@@ -50,6 +61,11 @@ export const AboutUniqueItemTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media (min-width: 1280px) {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+  }
 `
 
 export const AboutUniqueText = styled.p`
@@ -59,4 +75,9 @@ export const AboutUniqueText = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media (min-width: 1280px) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
 `

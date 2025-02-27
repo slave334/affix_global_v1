@@ -6,6 +6,9 @@ export const PartnerProgramWrapper = styled.div`
   gap: 40px;
   align-items: center;
   justify-content: center;
+  @media (min-width: 1280px) {
+    flex-direction: row-reverse;
+  }
 `
 
 export const PartnerProgramContent = styled.div`
@@ -14,6 +17,7 @@ export const PartnerProgramContent = styled.div`
   gap: 20px;
   align-items: flex-start;
   width: 100%;
+  max-width: 450px;
 `
 
 export const PartnerProgramTitle = styled.h2`
@@ -24,6 +28,14 @@ export const PartnerProgramTitle = styled.h2`
   font-weight: 800;
   line-height: 130%; /* 31.2px */
   letter-spacing: 0.12px;
+
+  @media (min-width: 1280px) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 130%;
+    letter-spacing: 0.16px;
+  }
 `
 
 export const PartnerProgramText = styled.p`
@@ -32,8 +44,15 @@ export const PartnerProgramText = styled.p`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 20.8px */
+  line-height: 130%;
   letter-spacing: 0.08px;
+  @media (min-width: 1280px) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.08px;
+  }
 `
 
 export const PartnerProgramButton = styled.button`
@@ -53,4 +72,5 @@ export const PartnerProgramButton = styled.button`
   justify-content: center;
   align-items: center;
   align-self: stretch;
+  max-width: 250px;
 `

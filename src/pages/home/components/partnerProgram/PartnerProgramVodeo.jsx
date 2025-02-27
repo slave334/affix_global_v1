@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const VideoWrapper = styled.div`
   max-width: 420px;
   @media (min-width: 1280px) {
-    max-width: 100%;
+    max-width: 450px;
   }
 `
 const PartnerProgramVodeo = () => {
