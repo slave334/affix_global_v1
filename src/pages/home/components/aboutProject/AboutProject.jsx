@@ -1,3 +1,4 @@
+import useNavigateToContact from '../../../../hooks/useNavigateToContact'
 import { ContainerPading } from '../../../../styles/GlobalStyles'
 import {
   AboutProjectWrapper,
@@ -10,6 +11,7 @@ import {
 import AboutProjectVideo from './AboutProjectVideo'
 
 const AboutProject = () => {
+  const redirectToContact = useNavigateToContact()
   return (
     <AboutProjectWrapper>
       <AboutProjectImageWrapper>
@@ -25,7 +27,9 @@ const AboutProject = () => {
             Мы прошли путь от первых тестов рекламных кампаний до масштабных
             международных проектов и знаем, что действительно важно:
           </AboutProjectText>
-          <AboutProjectButton>Подать заявку сейчас</AboutProjectButton>
+          <AboutProjectButton onClick={redirectToContact}>
+            Подать заявку сейчас
+          </AboutProjectButton>
         </AboutProjectContent>
       </ContainerPading>
     </AboutProjectWrapper>

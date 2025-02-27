@@ -7,8 +7,10 @@ import {
   PartnerProgramButton,
 } from './PartnerProgramStyled'
 import { ContainerPading } from '../../../../styles/GlobalStyles'
+import useNavigateToContact from '../../../../hooks/useNavigateToContact'
 
 const PartnerProgram = () => {
+  const redirectToContact = useNavigateToContact()
   return (
     <PartnerProgramWrapper>
       <PartnerProgramVodeo />
@@ -21,7 +23,9 @@ const PartnerProgram = () => {
             Другим маркетологам и получайте пожизненную прибыль в размере 10% от
             количества привлеченных вами клиентов
           </PartnerProgramText>
-          <PartnerProgramButton>Подать заявку сейчас</PartnerProgramButton>
+          <PartnerProgramButton onClick={redirectToContact}>
+            Подать заявку сейчас
+          </PartnerProgramButton>
         </PartnerProgramContent>
       </ContainerPading>
     </PartnerProgramWrapper>

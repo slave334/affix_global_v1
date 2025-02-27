@@ -6,8 +6,10 @@ import {
   DesktopHeaderWrapp,
 } from './DesktopHeaderStyled'
 import Logo from '../logo/Logo'
+import useNavigateToContact from '../../../../hooks/useNavigateToContact'
 
 const DesktopHeader = () => {
+  const redirectToContact = useNavigateToContact()
   return (
     <DesktopHeaderWrapp className="desktop">
       <Logo />
@@ -22,7 +24,9 @@ const DesktopHeader = () => {
         </DesktopHeaderLink>
         <DesktopHeaderLink to="/affix_global/contact">FAQ</DesktopHeaderLink>
       </DesktopHeaderNaw>
-      <DesktopHeaderButton>Подать заявку сейчас</DesktopHeaderButton>
+      <DesktopHeaderButton onClick={redirectToContact}>
+        Подать заявку сейчас
+      </DesktopHeaderButton>
     </DesktopHeaderWrapp>
   )
 }
