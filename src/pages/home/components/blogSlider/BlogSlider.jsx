@@ -9,6 +9,9 @@ import Img2 from '../../../../assets/images/BlogSlider2.png'
 import Img3 from '../../../../assets/images/BlogSlider3.png'
 import Img4 from '../../../../assets/images/BlogSlider4.png'
 
+import NextSVG from '../../../../assets/icons/next.svg'
+import PrevSVG from '../../../../assets/icons/prev.svg'
+
 const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -92,7 +95,7 @@ const ArrowButton = styled.button`
   position: absolute;
   top: 87%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.866);
   border: none;
   width: 50px;
   height: 50px;
@@ -105,7 +108,7 @@ const ArrowButton = styled.button`
   align-items: center;
   justify-content: center;
   &:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255, 255, 255);
   }
 
   &.prev {
@@ -185,13 +188,13 @@ const BlogSlider = () => {
         className="prev"
         onClick={() => sliderRef.current.slickPrev()}
       >
-        ‹
+        <img src={PrevSVG} alt="" />
       </ArrowButton>
       <ArrowButton
         className="next"
         onClick={() => sliderRef.current.slickNext()}
       >
-        ›
+        <img src={NextSVG} alt="" />
       </ArrowButton>
 
       <Slider ref={sliderRef} {...settings}>
