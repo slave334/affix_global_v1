@@ -33,7 +33,7 @@ const FooterDextop = () => {
   console.log('====================================')
   console.log(location.pathname)
   console.log('====================================')
-  const isContactPage = location.pathname === '/affix_global/contact'
+  const isContactPage = location.pathname === '/contact'
 
   return (
     <FooterDextopContainer>

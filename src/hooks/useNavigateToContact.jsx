@@ -4,7 +4,7 @@ const useNavigateToContact = () => {
   const navigate = useNavigate()
 
   const handleRedirect = () => {
-    navigate('/affix_global/contact')
+    navigate('/contact')
   }
 
   return handleRedirect
