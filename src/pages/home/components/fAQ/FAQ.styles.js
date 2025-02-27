@@ -14,6 +14,7 @@ export const FAQWrapperContent = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  max-width: 900px;
 `
 
 export const FAQList = styled.div`
@@ -24,7 +25,18 @@ export const FAQList = styled.div`
   gap: 20px;
 `
 
-export const FAQTitle = styled.h2``
+export const FAQTitle = styled.h2`
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  @media (min-width: 1280px) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+  }
+`
 
 export const FAQItem = styled.div``
 
@@ -53,6 +65,13 @@ export const FAQQuestion = styled.div`
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   `}
+  @media (min-width: 1280px) {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.16px;
+  }
 `
 
 export const FAQAnswer = styled.div`
@@ -66,6 +85,13 @@ export const FAQAnswer = styled.div`
   letter-spacing: 0.07px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  @media (min-width: 1280px) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.08px;
+  }
 `
 
 export const ArrowIcon = styled.span`
