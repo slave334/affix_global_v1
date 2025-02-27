@@ -12,7 +12,7 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      <Route path="/affix_global/" element={<MainLayout />}>
         <Route
           index
           element={
