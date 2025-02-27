@@ -40,7 +40,7 @@ export const FooterNavButton = styled.button`
   border: none;
   color: #fff;
   text-align: center;
-
+  cursor: pointer;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
